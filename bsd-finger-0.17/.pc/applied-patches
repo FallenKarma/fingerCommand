@@ -1,0 +1,9 @@
+01-legacy.patch
+02-518559-nsswitch-sources.patch
+03-468454-fingerd-ipv6.patch
+04-468454-finger-ipv6.patch
+05-547014-netgroup.patch
+06-572211-decrease-timeout.patch
+use-cmake-as-buildsystem.patch
+use-cmake-as-buildsystem-debian-extras.patch
+fix-fingerd-man-typo.patch

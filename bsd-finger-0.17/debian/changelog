@@ -1,0 +1,224 @@
+bsd-finger (0.17-17) unstable; urgency=medium
+
+  * Upload to unstable (0.17-17)
+
+ -- Josue Ortega <josue@debian.org>  Sun, 07 Jul 2019 17:09:50 -0600
+
+bsd-finger (0.17-16) experimental; urgency=medium
+
+  * New maintainer (Closes: #925001).
+  * Upgrade compat level to debhelper-compat (= 12).
+  * Remove debian/source/options.
+  * Update debian/copyright to Machine-readable format.
+  * Bump Standards-Version to 4.3.0, no changes required.
+  * Update source URL at debian/copyright and debian/watch files.
+    (Closes: #926655)
+  * debian/control:
+    - Add Vcs-* fields.
+    - Add Homepage field.
+  * Add debian CI tests
+  * debian/rules: Add hardening build flags.
+  * Add patch to fix fingerd man page typo.
+  * Remove command hardcoded path of postrm maint script.
+
+ -- Josue Ortega <josue@debian.org>  Sat, 11 May 2019 13:43:06 -0600
+
+bsd-finger (0.17-15.2) unstable; urgency=medium
+
+  * Non-maintainer upload
+  * Use cmake as build system. Closes: #873085, #912121
+
+ -- Christoph Biedl <debian.axhn@manchmal.in-ulm.de>  Sat, 08 Dec 2018 10:36:30 +0100
+
+bsd-finger (0.17-15.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Do not specify bzip2 compressor to dh_builddeb
+    (Closes: #833210)
+
+ -- Jonathan Wiltshire <jmw@debian.org>  Fri, 11 Nov 2016 14:58:53 +0000
+
+bsd-finger (0.17-15) unstable; urgency=low
+
+  * Fix "finger client causes long timeouts"
+    Add 06-572211-decrease-timeout.patch
+    Patch by Mats Erik Andersson
+    Closes: #572211
+  * Suggests: finger
+    Closes: #622105
+  * Enable hardened build flags
+  * DH compatibility level is 9
+  * Standards version is 3.9.3
+  * Debian source format is 3.0 (quilt)
+  * Fix debian-rules-missing-recommended-target
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Mon, 18 Jun 2012 15:37:11 +1000
+
+bsd-finger (0.17-14) unstable; urgency=low
+
+  [ Mats Erik Andersson <mats.andersson@gisladisker.se> ]
+  * Implement IPv6-support
+    Add 03-468454-fingerd-ipv6.patch
+    Add 04-468454-finger-ipv6.patch
+    Closes: #468454
+  * debian/fingerd.examples: Add debian/local/finger.xinetd
+
+  [ Anibal Monsalve Salazar ]
+  * Don't segfault when /etc/passwd has netgroup entry
+    Add 05-547014-netgroup.patch
+    Patch by Matthew A. Dunford
+    Closes: #547014
+  * Debian source format is 3.0 (quilt)
+  * Fix out-of-date-standards-version
+  * Fix maintainer-script-without-set-e
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Fri, 12 Feb 2010 14:49:23 +1100
+
+bsd-finger (0.17-13) unstable; urgency=low
+
+  * Priority is optional
+  * Build depends on quilt
+  * Standards Version is 3.8.1
+  * DH compatibility level is 7
+  * Run dh_prep instead of dh_clean -k
+  * Work with a non-iterable nsswitch source
+    02-518559-nsswitch-sources.patch by Tim Abbott
+    closes: #518559
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Wed, 10 Jun 2009 19:49:18 +1000
+
+bsd-finger (0.17-12) unstable; urgency=low
+
+  * Added debian/watch
+  * Fixed the following lintian issues:
+    - bsd-finger source: debian-rules-sets-DH_COMPAT line 10
+    - bsd-finger source: debian-rules-ignores-make-clean-error line 34
+    - bsd-finger source: out-of-date-standards-version 3.7.2 (current is 3.7.3)
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sun, 06 Apr 2008 17:30:13 +1000
+
+bsd-finger (0.17-11) unstable; urgency=low
+
+  * Resynchronise with Ubuntu.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Fri, 09 Feb 2007 10:43:05 +1100
+
+bsd-finger (0.17-10ubuntu1) feisty; urgency=low
+
+  * Make fingerd depend on update-inetd for update-inetd.
+
+ -- Tollef Fog Heen <tfheen@ubuntu.com>  Thu, 14 Dec 2006 11:40:14 +0100
+
+bsd-finger (0.17-10) unstable; urgency=low
+
+  * Set Standards-Version to 3.7.2.
+  * Set DH_COMPAT to 5.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Thu, 22 Jun 2006 09:03:02 +1000
+
+bsd-finger (0.17-9) unstable; urgency=low
+
+  * Set Standards-Version to 3.6.2.
+  * Set DH_COMPAT to 4.
+  * Fixed "fingerd.postrm is a #!/bin/sh script but uses command
+    -v", closes: #292977.
+  * Fixed "/usr/share/doc/finger/README.gz not helpful for user",
+    closes: #323230.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sat, 08 Oct 2005 19:10:10 +1000
+
+bsd-finger (0.17-8) unstable; urgency=low
+
+  * Fixed "Manpage mentions ~/.pgp when it should say ~/.pgpkey"
+    (Closes: #244217).
+  * Fixed "Manpage describes ~/.project as restricted to one line"
+    (Closes: #244218).
+  * New maintainer's email address.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Thu, 10 Feb 2005 23:22:52 +1100
+
+bsd-finger (0.17-7) unstable; urgency=low
+
+  * New maintainer.
+
+ -- Anibal Monsalve Salazar <A.Monsalve.Salazar@IEEE.org>  Thu, 20 May 2004 09:24:26 +1000
+
+bsd-finger (0.17-6) unstable; urgency=low
+
+  * Exit with a nonzero status when a request fails (closes: #122915).
+
+ -- Herbert Xu <herbert@debian.org>  Sat,  8 Dec 2001 18:39:54 +1100
+
+bsd-finger (0.17-5) unstable; urgency=low
+
+  * Use asprintf in preference to an array on the stack (closes: #106385).
+
+ -- Herbert Xu <herbert@debian.org>  Tue, 24 Jul 2001 19:25:14 +1000
+
+bsd-finger (0.17-4) unstable; urgency=low
+
+  * Restored old strsep code since gecos may be empty (closes: #103273).
+
+ -- Herbert Xu <herbert@debian.org>  Tue,  3 Jul 2001 21:24:19 +1000
+
+bsd-finger (0.17-3) unstable; urgency=low
+
+  * Finger no longer complains about remote X displays.
+
+ -- Herbert Xu <herbert@debian.org>  Tue, 19 Jun 2001 22:21:25 +1000
+
+bsd-finger (0.17-2) unstable; urgency=low
+
+  * Fixed typo in finger(1) man page (closes: #99328).
+
+ -- Herbert Xu <herbert@debian.org>  Thu, 31 May 2001 19:17:12 +1000
+
+bsd-finger (0.17-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fixed compilation problems with glibc 2.2 (closes: #90356).
+
+ -- Herbert Xu <herbert@debian.org>  Tue, 20 Mar 2001 21:30:56 +1100
+
+bsd-finger (0.16-3) unstable; urgency=low
+
+  * Set pn->realname to NULL by default (closes: #67593).
+
+ -- Herbert Xu <herbert@debian.org>  Sun, 23 Jul 2000 14:12:52 +1000
+
+bsd-finger (0.16-2) unstable; urgency=low
+
+  * Fixed a null pointer dereference (closes: #66829).  Reported and fixed by
+    Peter Toneby.
+  * Added build-time dependency on debhelper.
+
+ -- Herbert Xu <herbert@debian.org>  Fri,  7 Jul 2000 19:09:11 +1000
+
+bsd-finger (0.16-1) unstable; urgency=low
+
+  * New upstream release.
+  * Added .pgpkey to finger.1 (closes: #65632).
+
+ -- Herbert Xu <herbert@debian.org>  Mon, 19 Jun 2000 14:58:04 +1000
+
+bsd-finger (0.10-3) frozen unstable; urgency=low
+
+  * Clear the idle time if we cannot obtain a valid value, which is the case
+    for X logins (closes: #53816).
+
+ -- Herbert Xu <herbert@debian.org>  Tue, 21 Mar 2000 22:09:23 +1100
+
+bsd-finger (0.10-2) unstable; urgency=low
+
+  * Fixed finger width calculation (closes: #49510).
+
+ -- Herbert Xu <herbert@debian.org>  Thu, 11 Nov 1999 20:11:24 +1100
+
+bsd-finger (0.10-1) unstable; urgency=low
+
+  * Initial release.
+  * Don't print an error message if we can't open a tty file as it may be a
+    remote X login.
+  * finger now supports pts devices (closes: #39196, #41552, #43342, #43952).
+
+ -- Herbert Xu <herbert@debian.org>  Wed,  3 Nov 1999 10:00:20 +1100

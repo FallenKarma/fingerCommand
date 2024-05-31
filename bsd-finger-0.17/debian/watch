@@ -1,0 +1,2 @@
+version=3
+http://ftp.linux.org.uk/pub/linux/Networking/netkit/ bsd-finger-([\d]+[\.\d]*).tar.gz

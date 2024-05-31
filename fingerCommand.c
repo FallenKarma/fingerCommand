@@ -78,14 +78,14 @@ int main (int argc, char *argv[]) {
     }
 
 
-    // while ((ut = getutent()) != NULL) {
-    //     if (ut->ut_type == USER_PROCESS) {
-    //         printf("Login: %s\t\t\tName: %s\n", pw->pw_name, pw->pw_gecos);
-    //         printf("Directory: %s\t\t\tShell: %s\n", pw->pw_dir, pw->pw_shell);
-    //         printf("User %s logged in at: %s\n", ut->ut_user, getDateFromTimestamp(ut->ut_tv.tv_sec) );
-    //         break;
-    //     }
-    // }
+    while ((ut = getutent()) != NULL) {
+        if (ut->ut_type == USER_PROCESS) {
+            printf("Login: %s\t\t\tName: %s\n", pw->pw_name, pw->pw_gecos);
+            printf("Directory: %s\t\t\tShell: %s\n", pw->pw_dir, pw->pw_shell);
+            printf("User %s logged in at: %s\n", ut->ut_user, getDateFromTimestamp(ut->ut_tv.tv_sec) );
+            break;
+        }
+    }
 
 }
 

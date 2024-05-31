@@ -1,0 +1,13 @@
+service finger
+{
+	disable = no
+	socket_type = stream
+	protocol = tcp
+	flags = IPv6
+	wait = no
+	user = nobody
+	server = /usr/sbin/in.fingerd
+	server_args = -l -w
+	log_type = SYSLOG daemon info
+	log_on_success = HOST
+}
