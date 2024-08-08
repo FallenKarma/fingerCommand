@@ -16,6 +16,9 @@ char* getDateFromTimestamp (long timestamp) {
     return time_str;
 }
 
+
+void longPrint();
+
 int main (int argc, char *argv[]) {
     
 
@@ -79,13 +82,22 @@ int main (int argc, char *argv[]) {
 
 
     while ((ut = getutent()) != NULL) {
+        char *gecos = strdup(pw->pw_gecos);
+        char *full_name = strtok(gecos, ",");
+         char *room_number = "prova";
+        char *work_phone = strtok(NULL, ",");
+        char *home_phone = strtok(NULL, ",");
         if (ut->ut_type == USER_PROCESS) {
-            printf("Login: %s\t\t\tName: %s\n", pw->pw_name, pw->pw_gecos);
+            printf("Login: %s\t\t\tName: %s\n", pw->pw_name, full_name);
             printf("Directory: %s\t\t\tShell: %s\n", pw->pw_dir, pw->pw_shell);
             printf("User %s logged in at: %s\n", ut->ut_user, getDateFromTimestamp(ut->ut_tv.tv_sec) );
+            printf("Office phone: %s\t\t\tHome phone: %s", work_phone, home_phone);
             break;
         }
     }
 
 }
 
+void longPrint (struct utmp* user) {
+
+}
